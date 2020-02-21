@@ -6,29 +6,54 @@ import {
   CardTitle, CardSubtitle
 } from 'reactstrap';
 
-
+const CardBodyStyle = styled.div`
+  /* width: 50% */
+`
+const AddtlCardStyle = styled(Card)`
+  margin: 10% 0%;
+  border: 10px solid black;
+  border-radius: 15px;
+  background: lightgray;
+`
+const CharacterName = styled.h1`
+  font-style: italic;
+`
+const UlContainer = styled(CardText)`
+  display: flex;
+  justify-content: center;
+`
+const UlStyles = styled.ul`
+  width: 50%;
+`
+const LiStyles = styled.li`
+  text-align: left;
+`
 const CharacterCard = (props) => {
   return(
-    <div>
-    <Card>
+    <CardBodyStyle>
+    <AddtlCardStyle>
       <CardBody>
-        <CardTitle>{props.name}</CardTitle>
+        <CardTitle>
+          <CharacterName>
+            {props.name}
+          </CharacterName>
+        </CardTitle>
       </CardBody>
       <CardBody>
-        <CardText>
-          <ul>
-            <li>Height: {props.height}</li>
-            <li>Mass: {props.mass}</li>
-            <li>Hair Color: {props.hair_color}</li>
-            <li>Skin Color: {props.skin_color}</li>
-            <li>Eye Color: {props.eye_color}</li>
-            <li>Birth Year: {props.birth_year}</li>
-            <li>Gender: {props.gender}</li>
-          </ul>
-        </CardText>
+        <UlContainer>
+          <UlStyles>
+            <LiStyles><b>Height:</b> {props.height}</LiStyles>
+            <LiStyles><b>Mass:</b> {props.mass}</LiStyles>
+            <LiStyles><b>Hair Color:</b> {props.hair_color}</LiStyles>
+            <LiStyles><b>Skin Color:</b> {props.skin_color}</LiStyles>
+            <LiStyles><b>Eye Color:</b> {props.eye_color}</LiStyles>
+            <LiStyles><b>Birth Year:</b> {props.birth_year}</LiStyles>
+            <LiStyles><b>Gender:</b> {props.gender}</LiStyles>
+          </UlStyles>
+        </UlContainer>
       </CardBody>
-    </Card>
-  </div>
+    </AddtlCardStyle>
+  </CardBodyStyle>
   );
 }
 

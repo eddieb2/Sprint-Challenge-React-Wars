@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CharacterCard from './components/CharacterCard';
+import styled from 'styled-components'
 import './App.css';
+
+const MainWrapper = styled.div`
+  margin: 0% 20%
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -23,7 +28,7 @@ const App = () => {
   },[]);
 
   return (
-    <div className="App">
+    <MainWrapper className="App">
       <h1 className="Header">React Wars</h1>
     {!data &&
       <p>...loading</p>
@@ -43,7 +48,7 @@ const App = () => {
         />
       })
     }
-    </div>
+    </MainWrapper>
   );
 }
 
