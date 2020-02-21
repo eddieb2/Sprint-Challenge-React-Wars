@@ -6,11 +6,12 @@ import {
   CardTitle, CardSubtitle
 } from 'reactstrap';
 
+
+// STYLES START HERE //
 const CarBodyWrapper = styled.div`
   display:flex;
   justify-content: center;
 `
-
 const CardBodyStyle = styled.div`
   width: 40%
 `
@@ -33,6 +34,7 @@ const UlStyles = styled.ul`
 const LiStyles = styled.li`
   text-align: left;
 `
+// STYLES END HERE //
 
 const CharacterCard = (props) => {
   return(
