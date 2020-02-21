@@ -6,8 +6,13 @@ import {
   CardTitle, CardSubtitle
 } from 'reactstrap';
 
+const CarBodyWrapper = styled.div`
+  display:flex;
+  justify-content: center;
+`
+
 const CardBodyStyle = styled.div`
-  /* width: 50% */
+  width: 40%
 `
 const AddtlCardStyle = styled(Card)`
   margin: 10% 0%;
@@ -28,32 +33,35 @@ const UlStyles = styled.ul`
 const LiStyles = styled.li`
   text-align: left;
 `
+
 const CharacterCard = (props) => {
   return(
-    <CardBodyStyle>
-    <AddtlCardStyle>
-      <CardBody>
-        <CardTitle>
-          <CharacterName>
-            {props.name}
-          </CharacterName>
-        </CardTitle>
-      </CardBody>
-      <CardBody>
-        <UlContainer>
-          <UlStyles>
-            <LiStyles><b>Height:</b> {props.height}</LiStyles>
-            <LiStyles><b>Mass:</b> {props.mass}</LiStyles>
-            <LiStyles><b>Hair Color:</b> {props.hair_color}</LiStyles>
-            <LiStyles><b>Skin Color:</b> {props.skin_color}</LiStyles>
-            <LiStyles><b>Eye Color:</b> {props.eye_color}</LiStyles>
-            <LiStyles><b>Birth Year:</b> {props.birth_year}</LiStyles>
-            <LiStyles><b>Gender:</b> {props.gender}</LiStyles>
-          </UlStyles>
-        </UlContainer>
-      </CardBody>
-    </AddtlCardStyle>
-  </CardBodyStyle>
+    <CarBodyWrapper>
+      <CardBodyStyle>
+        <AddtlCardStyle>
+          <CardBody>
+            <CardTitle>
+              <CharacterName>
+                {props.name}
+              </CharacterName>
+            </CardTitle>
+          </CardBody>
+          <CardBody>
+            <UlContainer>
+              <UlStyles>
+                <LiStyles><b>Height:</b> {props.height}</LiStyles>
+                <LiStyles><b>Mass:</b> {props.mass}</LiStyles>
+                <LiStyles><b>Hair Color:</b> {props.hair_color}</LiStyles>
+                <LiStyles><b>Skin Color:</b> {props.skin_color}</LiStyles>
+                <LiStyles><b>Eye Color:</b> {props.eye_color}</LiStyles>
+                <LiStyles><b>Birth Year:</b> {props.birth_year}</LiStyles>
+                <LiStyles><b>Gender:</b> {props.gender}</LiStyles>
+              </UlStyles>
+            </UlContainer>
+          </CardBody>
+       </AddtlCardStyle>
+      </CardBodyStyle>
+    </CarBodyWrapper>
   );
 }
 
