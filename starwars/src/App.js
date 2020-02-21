@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CharacterCard from './components/CharacterCard';
+import PaginationMaker from './components/Pagination'
 import styled from 'styled-components'
 import './App.css';
 
@@ -10,12 +11,13 @@ const MainWrapper = styled.div`
 
 const App = () => {
   const [data, setData] = useState(false);
+  const [current, setCurrentPage] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`https://swapi.co/api/people/`)
+      .get(`https://swapi.co/api/people/?page=1`)
       .then(response => {
-        console.log(response.data.results);
+        console.log(response.data);
         setData(response.data.results);
       })
   },[]);
@@ -23,6 +25,7 @@ const App = () => {
   return (
     <MainWrapper className="App">
       <h1 className="Header">React Wars</h1>
+      <PaginationMaker></PaginationMaker>
     {!data &&
       <p>...loading</p>
     }
@@ -30,6 +33,7 @@ const App = () => {
       data.map(item => {
         console.log(item)
         return <CharacterCard 
+          key={item.timestamp}
           name={item.name}
           height={item.height}
           mass={item.mass}

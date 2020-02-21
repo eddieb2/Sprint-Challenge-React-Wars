@@ -13,7 +13,7 @@ const CarBodyWrapper = styled.div`
   justify-content: center;
 `
 const CardBodyStyle = styled.div`
-  width: 40%
+  width: 60%
 `
 const AddtlCardStyle = styled(Card)`
   margin: 10% 0%;
